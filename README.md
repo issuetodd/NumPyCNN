@@ -6,6 +6,8 @@ Convolutional neural network implementation using NumPy. Just three layers are c
 4.	ReLU layer: Applying ReLU activation function on the feature maps (output of conv layer).
 5.	Max Pooling layer: Applying the pooling operation on the output of ReLU layer.
 6.	Stacking conv, ReLU, and max pooling layers
+# Added
+1.padding feature. Keep the input feature map/image as the same size after CNN.
 
 **The project is tested using Python 3.5.2 installed inside Anaconda 4.2.0 (64-bit)
 NumPy version used is 1.14.0**
@@ -55,7 +57,7 @@ l1_filter = numpy.random.rand(2, 7, 7, 3) # Preparing the filters randomly.
 Next is to forward the filters to get applied on the image using the stack of layers used in the ConvNet.
 ```python
 print("\n**Working with conv layer 1**")
-l1_feature_map = numpycnn.conv(img, l1_filter)
+l1_feature_map = numpycnn.conv(img, l1_filter,padding=True)
 print("\n**ReLU**")
 l1_feature_map_relu = numpycnn.relu(l1_feature_map)
 print("\n**Pooling**")
