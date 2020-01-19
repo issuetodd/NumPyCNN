@@ -72,7 +72,7 @@ Here is the outputs of such conv-relu-pool layers.
 # Second conv layer
 l2_filter = numpy.random.rand(3, 5, 5, l1_feature_map_relu_pool.shape[-1])
 print("\n**Working with conv layer 2**")
-l2_feature_map = numpycnn.conv(l1_feature_map_relu_pool, l2_filter)
+l2_feature_map = numpycnn.conv(l1_feature_map_relu_pool, l2_filter,padding=True)
 print("\n**ReLU**")
 l2_feature_map_relu = numpycnn.relu(l2_feature_map)
 print("\n**Pooling**")
@@ -86,7 +86,7 @@ The outputs of such conv-relu-pool layers are shown below.
 # Third conv layer
 l3_filter = numpy.random.rand(1, 7, 7, l2_feature_map_relu_pool.shape[-1])
 print("\n**Working with conv layer 3**")
-l3_feature_map = numpycnn.conv(l2_feature_map_relu_pool, l3_filter)
+l3_feature_map = numpycnn.conv(l2_feature_map_relu_pool, l3_filter,,padding=True)
 print("\n**ReLU**")
 l3_feature_map_relu = numpycnn.relu(l3_feature_map)
 print("\n**Pooling**")
